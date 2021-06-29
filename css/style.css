@@ -3,7 +3,8 @@
 :root{
     --darkblue : #384865;
     --lightblue: #7C8DAB;
-
+    --white: #F4F4F5;
+    --skyblue: #B5DCEB;
 }
 
 *{
@@ -53,8 +54,12 @@ a{
 }
 
 .nav-item a{
-    color: var(--darkblue);
     font-size: 1.5rem;
+}
+
+.category a{
+    position: relative;
+    color: var(--darkblue);
 }
 
 .category a:hover{
@@ -65,14 +70,17 @@ a{
     content: '';
     background-color: var(--lightblue);
     position: absolute;
-    width: 0%;
+    border-radius: 15px;
     height: 0.4rem;
-    bottom: -1rem;
-    transition: 0.5s;
+    left: 0;
+    right: 0;
+    bottom: -0.8rem;
+    transform: scaleX(0);
+    transition: 0.5s transform ease-in-out;
 }
 
 .category a:hover::after{
-    width: 100%;
+    transform: scaleX(100%);
 }
 
 #login-btn{
@@ -80,13 +88,13 @@ a{
     border-radius: 8px;
     box-shadow: 0px 2px 15px var(--lightblue);
     background-color: var(--darkblue);
-    color: #B5DCEB;
+    color: var(--skyblue);
 }
 /*Landing Section Starts Here*/
 .landing-section .container{
     height: 85vh;
     margin-bottom: 15vh;
-    background-image: url(../Assets/landing-image.png);
+    background-image: url(../Assets/home-landing-image.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 90% 0%;
@@ -135,17 +143,18 @@ a{
 }
 
 .new-arrival .item{
-    background-color: #F4F4F5;
+    background-color: var(--white);
     padding-top: 15px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgb(150, 149, 149,0.5);
     margin-left: 1.5%;
-    transition: 0.5s margin ease-in-out;
+    transition: 0.5s margin ease-in-out, 0.5s background-color ease-in-out;
     margin-bottom: 0;
 }
 
 .new-arrival .item:hover{
     margin-bottom: 10vh;
+    background-color: white;
 }
 
 .new-arrival .item img{
@@ -153,12 +162,12 @@ a{
 }
 /* Promo Section Starts Here */
 .promo-section .container{
-    height: 90vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 .promo-section .container h1{
@@ -179,7 +188,7 @@ a{
     font-weight: lighter;
     letter-spacing: 2px;
     color: var(--lightblue);
-    margin-bottom: 7%;
+    margin-bottom: 6%;
 }
 
 .promo-content{
@@ -199,8 +208,7 @@ a{
 }
 
 .promo-img{
-    padding-top: 10px;
-    background-color: #F4F4F5;
+    background-color: var(--white);
     box-shadow: 0px 0px 20px rgb(150, 149, 149,0.5);
     border-radius: 10px;
     width: 100%;
@@ -210,7 +218,7 @@ a{
 }
 
 .promo-item img{
-    height: 100%;
+    height: 90%;
 }
 
 .promo-item span{
@@ -225,22 +233,8 @@ a{
     letter-spacing: 5px;
 }
 
-.promo-item span>a{
-    color: #B5DCEB;
-}
-
-.promo-item h3{
-    color: var(--darkblue);
-    font-weight: 400;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
-}
-
-.promo-item p{
-    color: var(--lightblue);
-    font-weight: lighter;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
+.promo-item .promo-img span>a{
+    color: var(--skyblue);
 }
 
 .promo-text{
@@ -248,13 +242,28 @@ a{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 25vh;
+    height: 30vh;
     margin-top: 1.5rem;
+}
+
+.promo-text h3{
+    color: var(--darkblue);
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.promo-text p{
+    color: var(--lightblue);
+    font-weight: lighter;
+    letter-spacing: 2px;
+    line-height: 2rem;
+    font-size: 1.5rem;
 }
 
 .promo-hot{
     max-width: 200px;
-    padding: 0.6rem 1.2vw;
+    padding: 0.5rem 1.2vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,4 +276,144 @@ a{
     font-size: 1rem;
     font-weight: bold;
     color: var(--darkblue);
+}
+/* Overview Section Starts Here */
+.overview-section .container{
+    height: 90vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overview-box{
+    max-height: 40vh;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgb(150, 149, 149,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3.5% 0;
+}
+
+.overview-box>img{
+    width: 30vw;
+}
+
+.overview-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 6%;
+}
+
+.overview-content h1{
+    color: var(--darkblue);
+    letter-spacing: 5px;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.overview-content p{
+    margin-top: 3%;
+    color: var(--lightblue);
+    letter-spacing: 2px;
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
+
+.overview-content>div{
+    margin-top: 10%;
+}
+
+.overview-content>div>a>span{
+    vertical-align: middle;
+}
+
+.overview-content a{
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    padding: 0.6rem 1.8vw;
+    color: var(--skyblue);
+    box-shadow: 0px 0px 20px var(--lightblue);
+    background-image: linear-gradient(to right,var(--darkblue),#166EAE);
+    border-radius: 10px;
+}
+/* Footer Section Begins Here */
+.footer-section{
+    box-shadow: 0px 0px 30px rgb(150, 149, 149,0.5);
+}
+
+.footer-section .container{
+    height: 45vh;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-footer, .right-footer{
+    width: 45%;
+}
+
+.left-footer p, .right-footer p{
+    font-size: 1.2rem;
+    color: var(--lightblue);
+    line-height: 2rem;
+    letter-spacing: 2px;
+}
+
+.left-footer>*:not(:last-child), .right-footer>*:not(:last-child){
+    margin-bottom: 2rem;
+}
+
+.right-footer h1{
+    color: var(--darkblue);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.social-media{
+    display: flex;
+}
+
+.social-media img{
+    margin-right: 1.5rem;
+}
+
+.subscribe{
+    background-color: var(--white);
+    padding: 0.6rem 1.2vw;
+    border-radius: 10px;
+}
+
+.subscribe form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subscribe input{
+    width: 100%;
+    background-color: unset;
+    border: none;
+}
+
+.subscribe input:focus{
+    outline: none;
+}
+
+.subscribe input::placeholder{
+    font-size: 1.3rem;
+}
+
+.subscribe button{
+    border: none;
+    border-radius: 10px;
+    background-color: var(--darkblue);
+    color: var(--skyblue);
+    padding: 1rem 1.8vw;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }

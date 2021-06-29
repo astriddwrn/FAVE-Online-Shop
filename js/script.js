@@ -9,7 +9,7 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
-var countDownDate = new Date("Aug 5, 2021 21:00:00").getTime();
+var countDownDate = new Date("Jul 6, 2021 21:00:00").getTime();
 
 var x = setInterval(function() {
 
