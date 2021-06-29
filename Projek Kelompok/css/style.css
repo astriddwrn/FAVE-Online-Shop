@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --darkblue : #384865;
+    --lightblue: #7C8DAB;
+
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    padding-inline: 6rem;
+}
+
+#navbar{
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    transition: 0.7s top ease-in-out;
+}
+
+#navbar .container{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-item:not(:first-child){
+    margin-left: 3.6vw;
+}
+
+.nav-item a{
+    color: var(--darkblue);
+    font-size: 1.5rem;
+}
+
+.category a:hover{
+    color: var(--lightblue);
+}
+
+.category a::after{
+    content: '';
+    background-color: var(--lightblue);
+    position: absolute;
+    width: 0%;
+    height: 0.4rem;
+    bottom: -1rem;
+    transition: 0.5s;
+}
+
+.category a:hover::after{
+    width: 100%;
+}
+
+#login-btn{
+    padding: 0.7rem 2.7vw;
+    border-radius: 8px;
+    box-shadow: 0px 2px 15px var(--lightblue);
+    background-color: var(--darkblue);
+    color: #B5DCEB;
+}
+/*Landing Section Starts Here*/
+.landing-section .container{
+    height: 85vh;
+    margin-bottom: 15vh;
+    background-image: url(../Assets/landing-image.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 90% 0%;
+}
+
+.landing-title{
+    height: 60vh;
+    max-width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.new-arrival{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+}
+
+.landing-title p{
+    font-size: 4rem;
+    line-height: 6.25rem;
+    letter-spacing: 5px;
+    font-weight: lighter;
+    color: var(--darkblue);
+}
+
+.landing-title span{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.new-arrival .title{
+    width: 14%;
+    color: var(--lightblue);
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.new-arrival>*{
+    width: 16%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-arrival .item{
+    background-color: #F4F4F5;
+    padding-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(150, 149, 149,0.5);
+    margin-left: 1.5%;
+    transition: 0.5s margin ease-in-out;
+    margin-bottom: 0;
+}
+
+.new-arrival .item:hover{
+    margin-bottom: 10vh;
+}
+
+.new-arrival .item img{
+    height: 100%;
+}
+/* Promo Section Starts Here */
+.promo-section .container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10vh;
+}
+
+.promo-section .container h1{
+    font-size: 3rem;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    color:  var(--darkblue);
+    margin-bottom: 2.5%;
+}
+
+.promo-section .container h1>span{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.promo-section .container h2{
+    font-size: 2.5rem;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: var(--lightblue);
+    margin-bottom: 7%;
+}
+
+.promo-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.promo-item{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.promo-item:not(:last-child){
+    margin-right: 6%;
+}
+
+.promo-img{
+    padding-top: 10px;
+    background-color: #F4F4F5;
+    box-shadow: 0px 0px 20px rgb(150, 149, 149,0.5);
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.promo-item img{
+    height: 100%;
+}
+
+.promo-item span{
+    position: absolute;
+    background-color: var(--darkblue);
+    box-shadow: 0px 0px 20px var(--lightblue);
+    margin-bottom: 2.5rem;
+    padding: 0.5rem 1.8vw;
+    border-radius: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.promo-item span>a{
+    color: #B5DCEB;
+}
+
+.promo-item h3{
+    color: var(--darkblue);
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.promo-item p{
+    color: var(--lightblue);
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.promo-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 25vh;
+    margin-top: 1.5rem;
+}
+
+.promo-hot{
+    max-width: 200px;
+    padding: 0.6rem 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--darkblue);
+    border-radius: 10px;
+}
+
+.promo-hot>p{
+    margin-left: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--darkblue);
+}
