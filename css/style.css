@@ -84,9 +84,9 @@ a{
 }
 
 #login-btn{
-    padding: 0.7rem 2.7vw;
+    padding: 0.6rem 2.4vw;
     border-radius: 8px;
-    box-shadow: 0px 2px 15px var(--lightblue);
+    box-shadow: 0px 6px 15px var(--lightblue);
     background-color: var(--darkblue);
     color: var(--skyblue);
 }
@@ -398,14 +398,18 @@ a{
     width: 100%;
     background-color: unset;
     border: none;
+    font-size: 1.3rem;
+    color: var(--darkblue);
 }
 
 .subscribe input:focus{
     outline: none;
+    background-color: unset;
 }
 
 .subscribe input::placeholder{
     font-size: 1.3rem;
+    opacity: 50%;
 }
 
 .subscribe button{
