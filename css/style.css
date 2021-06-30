@@ -15,6 +15,7 @@
 
 body{
     font-family: 'Roboto',sans-serif;
+    background-color: #E5E5E5;
 }
 
 a{
@@ -26,11 +27,11 @@ a{
 }
 
 #navbar{
-    background-color: white;
     position: sticky;
     top: 0;
     z-index: 1;
     transition: 0.7s top ease-in-out;
+    background-color: white;
 }
 
 #navbar .container{
