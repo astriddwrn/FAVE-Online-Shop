@@ -1,0 +1,62 @@
+@import url("/css/base.css");
+
+.left-section .logo{
+    z-index: 999;
+}
+
+.title, input{
+    color: var(--darkblue);
+    letter-spacing: 0.1em;
+    font-size:1.5rem;
+}
+
+.slogan, label, button, a{
+    color: var(--lightblue);
+    letter-spacing: 0.1em;
+    font-size:1.5rem;
+}
+
+.title{
+    font-size: 3.5rem;
+    font-weight: 300;
+   
+}
+
+.bold{
+    font-weight: 600;
+}
+
+input::placeholder{
+    color: var(--lightblue);
+    font-style: italic;
+}
+
+input:not(#radio){
+    border-bottom: solid 3px var(--lightblue);
+}
+
+button{
+    background-color: var(--darkblue);
+    color: #B5DCEB;
+    border-radius: 10px;
+}
+
+button:hover{
+    box-shadow: 0px 7px 20px rgba(125, 146, 184, 0.7);
+    transition: 0.3s;
+}
+
+label.error{
+    color: rgb(214, 23, 23);
+    font-size:1rem;
+}
+
+.forgot{
+    font-size: 1rem;
+    color: #7C8DAB80;
+
+}
+
+a:hover{
+    color: var(--darkblue)
+}
