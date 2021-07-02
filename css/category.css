@@ -57,14 +57,14 @@
 .all-gallery{
     padding: 5vh 0;
     display: flex;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 2.5rem;
 }
 
 .item{
-    min-width: 20vw;
-    flex: 1 1 250px;
+    width: 284px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,13 +118,34 @@
     background-color: #cacaca;
 }
 
+.item-info, .item-price{
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-price{
+    justify-content: flex-start;
+}
+
+.item-info h2{
+    text-align: center;
+}
+
 .item-info h2,.item-price p{
     line-height: 2rem;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: 2px;
     font-size: 1.2rem;
     color: var(--darkblue);
+}
+
+.item-price.discount :first-child{
+    margin-bottom: 1rem;
+    opacity: 33%;
+    text-decoration: line-through;
+}
+
+.item-price.item-price.discount :last-child{
+    color: #C63030;
 }
