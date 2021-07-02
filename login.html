@@ -24,8 +24,10 @@
 
                 <form action="" class="form-signup d-flex flex-column">
                     <!-- <div class="form-signup d-flex flex-column"> -->
-                        <input type="email" name="email" id="email" class="mt-5" placeholder="Email">
-                        <input type="password" name="password" id="password" class="mt-5" placeholder="Password">
+                        <div class="label-off mt-4">Email</div>
+                        <input type="email" name="email" id="email" class="border-success" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+                        <div class="label-off mt-4">Password</div>
+                        <input type="password" name="password" id="password" class="border-success" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
                         <div class="mt-1 w-100 text-end">
                             <a href="./" class="forgot">Forgot Password?</a>
                         </div>
@@ -40,5 +42,9 @@
             </div>
         </div>
     </div>
+
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="./js/signup.js"></script>
 </body>
 </html>
