@@ -1,5 +1,23 @@
 $(document).ready(function(){
 
+    function isEmpty(str) {
+        return (!str || str.length === 0 );
+    }
+
+    $('input:not([type=radio], [type=checkbox])').focus(function(){
+        $(this).prev().addClass('label-on').removeClass('label-off');
+    });
+
+    $('input:not([type=radio], [type=checkbox])').blur(function(){
+        if(isEmpty($(this).val())){
+            $(this).prev().addClass('label-off').removeClass('label-on');
+           
+        }
+        else{
+            $(this).prev().addClass('label-on').removeClass('label-off');
+        }
+    });
+
     $.validator.addMethod("letters", function (value, element) {
         return this.optional(element) || value == value.match(/^[a-zA-Z\s]*$/);
     });
@@ -20,7 +38,7 @@ $(document).ready(function(){
         rules:{
             name: {
                 required: true,
-                min: 3,
+                minlength: 3,
                 letters: true,
             },
             email: {
@@ -67,8 +85,17 @@ $(document).ready(function(){
             }
             else{
                 error.insertAfter(element);
+                $(element).addClass('border-error').removeClass('border-success');
+                console.log('3');
             }
-        }
+        },
+        highlight: function(element){
+            $(element).addClass('border-error').removeClass('border-success');
+        },
+        unhighlight: function(element){
+            $(element).addClass('border-success').removeClass('border-error');          
+        },
+        
     });
 
 });
