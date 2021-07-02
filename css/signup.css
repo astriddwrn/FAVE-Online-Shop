@@ -29,10 +29,15 @@
 input::placeholder{
     color: var(--lightblue);
     font-style: italic;
+    transition: 0.3s;
 }
 
-input:not(#radio){
-    border-bottom: solid 3px var(--lightblue);
+.border-success{
+    border-bottom: solid 3px var(--lightblue) !important;
+}   
+
+.border-error{
+    border-bottom: solid 3px rgb(214, 23, 23);
 }
 
 button{
@@ -46,15 +51,23 @@ button:hover{
     transition: 0.3s;
 }
 
+.label-on{
+    color: var(--lightblue);
+}
+
+.label-off{
+    color: white;
+}
+
 label.error{
     color: rgb(214, 23, 23);
     font-size:1rem;
+    text-align:right;
 }
 
 .forgot{
     font-size: 1rem;
     color: #7C8DAB80;
-
 }
 
 a:hover{
