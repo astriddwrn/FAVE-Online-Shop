@@ -15,7 +15,7 @@
 
 body{
     font-family: 'Roboto',sans-serif;
-    background-color: #E5E5E5;
+    background-color: var(--white);
 }
 
 a{
@@ -386,7 +386,8 @@ a{
 
 .subscribe{
     background-color: var(--white);
-    padding: 0.6rem 1.2vw;
+    box-shadow: 0px 0px 20px rgb(150, 149, 149,0.5);
+    padding: 0.6rem 0.8vw;
     border-radius: 10px;
 }
 
@@ -395,7 +396,7 @@ a{
     justify-content: space-between;
 }
 
-.subscribe input{
+.subscribe input[type=text]{
     width: 100%;
     background-color: unset;
     border: none;
