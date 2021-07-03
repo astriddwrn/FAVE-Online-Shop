@@ -8,18 +8,20 @@
     color: var(--darkblue);
     letter-spacing: 0.1em;
     font-size:1.5rem;
+    font-family: 'Roboto',sans-serif;
 }
 
 .slogan, label, button, a{
     color: var(--lightblue);
     letter-spacing: 0.1em;
     font-size:1.5rem;
+    font-family: 'Roboto',sans-serif;
 }
 
 .title{
     font-size: 3.5rem;
     font-weight: 300;
-   
+    font-family: 'Roboto',sans-serif;
 }
 
 .bold{
@@ -53,16 +55,19 @@ button:hover{
 
 .label-on{
     color: var(--lightblue);
+    font-family: 'Roboto',sans-serif;
 }
 
 .label-off{
     color: white;
+    font-family: 'Roboto',sans-serif;
 }
 
 label.error{
     color: rgb(214, 23, 23);
     font-size:1rem;
     text-align:right;
+    font-family: 'Roboto',sans-serif;
 }
 
 .forgot{

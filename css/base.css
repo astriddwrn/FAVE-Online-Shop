@@ -16,7 +16,8 @@ body{
     padding: 0;
 }
 
-input {
+input, button{
+    background-color: inherit;
     border-style: hidden;
 }
 
