@@ -81,7 +81,7 @@ $(document).ready(function(){
         },
         errorPlacement: function(error, element) {
             if(element.attr("name")=="radio"){
-                error.insertAfter(".radio-error");
+                error.insertAfter(".radio-error").addClass("radioErrorCss");
             }
             else{
                 error.insertAfter(element);

@@ -1,10 +1,40 @@
 @import url("/css/base.css");
 
-.left-section .logo{
+.logo{
     z-index: 999;
+    left: 0;
+    top: 0;
 }
 
-.title, input{
+.background{
+    z-index: -1;
+    object-fit: cover;
+    bottom: 0;
+}
+
+.login-background{
+    z-index: -1;
+    object-fit: cover;
+    /* left: -15%; */
+}
+
+.pass-background{
+    z-index: -1;
+    object-fit: cover;
+    bottom: 0;
+}
+
+.left-section{
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.right-section{
+    background-color:white;
+    min-height: 100vh;
+}
+
+input{
     color: var(--darkblue);
     letter-spacing: 0.1em;
     font-size:1.5rem;
@@ -19,6 +49,7 @@
 }
 
 .title{
+    color: var(--darkblue);
     font-size: 3.5rem;
     font-weight: 300;
     font-family: 'Roboto',sans-serif;
@@ -63,11 +94,15 @@ button:hover{
     font-family: 'Roboto',sans-serif;
 }
 
-label.error{
+label.error:not([type=radio]){
     color: rgb(214, 23, 23);
     font-size:1rem;
     text-align:right;
     font-family: 'Roboto',sans-serif;
+}
+
+.radioErrorCss{
+    text-align:left !important;
 }
 
 .forgot{
@@ -78,3 +113,38 @@ label.error{
 a:hover{
     color: var(--darkblue)
 }
+
+@media all and (max-width: 1280px) { }
+
+@media all and (max-width: 992px) { 
+    .logo{
+        position: relative !important;
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+    }
+    .background, .login-background{
+        display: none;
+    }
+    .left-section{
+        display:none;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .title{
+        font-size: 2.5rem;
+    }
+    .slogan{
+        margin-top: 20px;
+        font-size: .9rem;
+    }
+    input, input::placeholder, label, a, button{
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 480px) {
+    button{
+        width: 100% !important;
+    }
+ }
