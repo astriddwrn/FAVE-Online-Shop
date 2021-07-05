@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/category.css">
+    <script src="js/navbar.js"></script>
     <title>Fave</title>
 </head>
 <body>
@@ -34,6 +35,28 @@
                     </a>
                 </li>
                 <li class="nav-item"><a href="login.html" id="login-btn">LOGIN</a></li>
+                <li>
+                    <a href="#">
+                        <div class="hamburger-btn" id="hamburger-btn" onclick="toggleEvent(this.id), toggleEvent('side-navbar')">
+                            <div class="line-1"></div>
+                            <div class="line-2"></div>
+                            <div class="line-3"></div>
+                        </div>
+                    </a>
+                    <div class="side-navbar" id="side-navbar">
+                        <div class="navbar-item">
+                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="Assets/navbar-x-btn.png" alt=""></a></div>
+                            <a href="#" id="search-bar-mobile">
+                                <img src="Assets/category-search.png" alt="">
+                                <input type="text" name="search-2" id="search-2">
+                            </a>
+                            <a href="#">All</a>
+                            <a href="#">Women</a>
+                            <a href="#">Men</a>                       
+                        </div>
+                        <div id="login-btn-mobile"><a href="">LOGIN</a></div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -57,21 +80,6 @@
                     <div class="item-price discount">
                         <p>Rp 229.000,00</p>
                         <p>Now Rp 68.700,00</p>
-                    </div>
-                    
-                </div>
-                <div class="item">
-                    <div class="item-image">
-                        <img src="Assets/women-3.png" alt="">
-                        <div class="overlay">
-                            <a href="#">View</a>
-                        </div>
-                    </div>
-                    <div class="item-info">
-                        <h2>HAWAIAN RED DRESS</h2>
-                    </div>
-                    <div class="item-price">
-                        <p>Rp 279.000,00</p>
                     </div>
                 </div>
                 <div class="item">
