@@ -1,5 +1,5 @@
 
-var countDownDate = new Date("Jul 6, 2021 21:00:00").getTime();
+var countDownDate = new Date("Jul 12, 2021 21:00:00").getTime();
 
 var x = setInterval(function() {
 
@@ -43,4 +43,13 @@ function showSlides(n) {
   }
   slides[slideIndex-1].classList.add('active');
   dots[slideIndex-1].classList.add('active');
+}
+
+function readMore(id,dot,more){
+  thisDots = document.getElementById(dot);
+  thisText = document.getElementById(id);
+  thisReadMore = document.getElementById(more);
+  thisText.style.display = "block";
+  thisDots.style.display = "none";
+  thisReadMore.style.display = "none";
 }
