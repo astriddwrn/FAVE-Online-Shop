@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/viewProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/navbar.js"></script>
+    <script src="js/viewProduct.js"></script>
+    <title>Fave</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="Assets/logo-website.png" alt="">
+                </a>
+            </div>
+            <ul class="nav-list category">
+                <li class="nav-item"><a href="allWear.html">All</a></li>
+                <li class="nav-item"><a href="#">Women</a></li>
+                <li class="nav-item"><a href="#">Men</a></li>
+            </ul>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a id="search-bar">
+                        <img src="Assets/category-search.png" alt="">
+                        <span><input type="text" name="search" id="search"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" style="display: flex; align-items: center;">
+                        <img src="Assets/home-shopping-cart.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item"><a href="login.html" id="login-btn">LOGIN</a></li>
+                <li>
+                    <a href="#">
+                        <div class="hamburger-btn" id="hamburger-btn" onclick="toggleEvent(this.id), toggleEvent('side-navbar')">
+                            <div class="line-1"></div>
+                            <div class="line-2"></div>
+                            <div class="line-3"></div>
+                        </div>
+                    </a>
+                    <div class="side-navbar" id="side-navbar">
+                        <div class="navbar-item">
+                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="Assets/navbar-x-btn.png" alt=""></a></div>
+                            <a id="search-bar-mobile">
+                                <img src="Assets/category-search.png" alt="">
+                                <input type="text" name="search-2" id="search-2">
+                            </a>
+                            <a href="#">All</a>
+                            <a href="#">Women</a>
+                            <a href="#">Men</a>                       
+                        </div>
+                        <div id="login-btn-mobile"><a href="">LOGIN</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="view-section">
+        <div class="container">
+            <div class="image-wrapper">
+                <div class="image-box">
+                    <div class="img-slider">
+                        <div class="product-img active">
+                            <img src="Assets/view-women-hawaian-red.png" alt="">
+                        </div>
+                        <div class="product-img">
+                            <img src="Assets/view-women-hawaian-blue.png" alt="">
+                        </div>
+                    </div>
+                    <div class="dot-list">
+                        <div class="dot active" onclick="currentSlide(1)"></div>
+                        <div class="dot" onclick="currentSlide(2)"></div>
+                    </div>
+                </div>
+                <a id="next-btn"><img src="Assets/product-arrow-right.png" alt="" style="cursor: pointer;" onclick="nextSlide(1)" ></a>
+            </div>
+            <div class="product-content">
+                <div class="product-header">
+                    <div class="product-title">
+                        <h1>Hawaian Dress</h1>
+                        <div class="product-rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="description"> 4/5</span>
+                        </div>
+                    </div>
+                    <div class="product-price discount">
+                        <p>Rp 279.000,00</p>
+                        <p>Now Rp 195.300,00</p>
+                    </div>
+                </div>
+                <div class="product-desc">
+                    <p>Summer is near! Never be stuck in a style rut anymore with these easy-to-pair bodycon and flared fits.</p>
+                </div>
+                <form action="" class="product-form" onsubmit="validate();">
+                    <div class="product-select">
+                        <select name="size" id="size">
+                            <option value="" selected disabled hidden>Select Size</option>
+                            <option value="small">Small (S)</option>
+                            <option value="medium">Medium (M)</option>
+                            <option value="large">Large (L)</option>
+                        </select>
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit" style="cursor: pointer;">
+                            <p>ADD TO CART</p> 
+                            <img src="Assets/arrow-right.png" alt="">
+                        </button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="footer-section">
+        <div class="container">
+            <div class="left-footer">
+                <img src="Assets/logo-website.png" alt="">
+                <p>We are a family of brands, driven by our desire to make great design available to everyone in a sustainable way. Together we offer fashion, design and services, that enable people to be inspired and to express their own personal style, making it easier to live in a more circular way.</p>
+                <div class="social-media">
+                    <a href="#"><img src="Assets/home-icon-instagram.png" alt=""></a>
+                    <a href="#"><img src="Assets/home-icon-twitter.png" alt=""></a>
+                </div>
+            </div>
+            <div class="right-footer">
+                <h1>New in FAVE?</h1>
+                <p>Suscribe to our monthly magazine for more fashion mix and match tips & tricks!</p>
+                <div class="subscribe">
+                    <form action="">
+                        <input type="text" name="email" id="email" placeholder="someone@example.com" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
