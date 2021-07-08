@@ -531,7 +531,7 @@ a{
     padding-top: 5vh;
     padding-bottom: 5vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -553,6 +553,7 @@ a{
 .right-footer h1{
     color: var(--darkblue);
     font-size: 2.5rem;
+    letter-spacing: 3px;
     font-weight: 400;
 }
 
@@ -838,6 +839,10 @@ a{
         margin-top: 2rem;
     }
 
+    .overview-content>div>a{
+        padding: 1rem 4rem;
+    }
+
     .left-footer, .right-footer{
         width: 100%;
     }
@@ -879,7 +884,7 @@ a{
     }
 
     .new-arrival{
-        height: 35vh;
+        height: 30vh;
         justify-content: space-between;
     }
 
@@ -888,7 +893,7 @@ a{
     }
 
     .slider-wrapper{
-        max-width: 180px;
+        max-width: 190px;
         margin-right: 0;
     }
 
@@ -916,7 +921,7 @@ a{
         font-size: 2rem;
     }
 
-    .overview-content>p, .overview-content a{
+    .overview-content>p{
         font-size: 1.2rem;
     }
 }
@@ -960,6 +965,10 @@ a{
 
     .overview-content>p, .overview-content a{
         font-size: 1rem;
+    }
+
+    .overview-content>div>a{
+        padding: 0.8rem 2rem;
     }
    
     .subscribe input[type=text], .subscribe input::placeholder{

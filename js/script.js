@@ -22,6 +22,10 @@ var x = setInterval(function() {
 
 var slideIndex = 1;
 
+var y = setInterval(function() {
+  nextSlide(1);
+},6000)
+
 function nextSlide(n) {
   showSlides(slideIndex += n);
 }
