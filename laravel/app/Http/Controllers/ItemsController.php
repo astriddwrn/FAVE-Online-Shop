@@ -15,8 +15,8 @@ class ItemsController extends Controller
      */
     public function index($id)
     {
-        $category = Category::findOrFail($id);
-        return view('category', compact('category'));
+        $item = Item::findOrFail($id);
+        return view('viewProduct', compact('item'));
         // return dd($category);
     }
 

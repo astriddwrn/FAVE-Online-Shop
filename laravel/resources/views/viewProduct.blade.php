@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url('css/style.css')}}">
-    <link rel="stylesheet" href="{{url('css/category.css')}}">
+    <link rel="stylesheet" href="{{url('css/viewProduct.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{url('js/jquery-3.5.1.js')}}"></script>
     <script src="{{url('js/navbar.js')}}"></script>
+    <script src="{{url('js/viewProduct.js')}}"></script>
     <title>Fave</title>
 </head>
 <body>
@@ -35,7 +38,6 @@
                     </a>
                 </li>
 
-
                 @if (auth()->check())
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -46,9 +48,6 @@
                 <li class="nav-item"><a href="/login" id="login-btn">LOGIN</a></li>
                 @endif
 
-                
-                
-                
                 <li>
                     <a href="#">
                         <div class="hamburger-btn" id="hamburger-btn" onclick="toggleEvent(this.id), toggleEvent('side-navbar')">
@@ -83,37 +82,67 @@
             </ul>
         </div>
     </nav>
-    <section class="all-category"> 
+    <section class="view-section">
         <div class="container">
-            <div class="banner">
-                <h1>ALL FASHION</h1>
-                <p>You have no limits in your clothing.<br>Let you face the world in style.</p>
-            </div>
-            <div class="all-gallery">
-            @foreach($category->items as $item)
-                <div class="item">
-                    <div class="item-image">
-                    @foreach($item->pictures as $picture)
-                        @if($loop->first)
-                        <img src="{{asset('Assets/' . $picture->location)}}" alt="">
-                        @endif
-                    @endforeach
+            <div class="image-wrapper">
+                <div class="image-box">
+                    <div class="img-slider">
 
-                        <div class="overlay">
-                            <a href="/item/{{$item->id}}">View</a>
+                        @foreach($item->pictures as $picture)
+                        <div class="product-img">
+                            <img src="{{asset('Assets/' . $picture->location)}}" alt="">
                         </div>
-                    
+                        @endforeach
+
                     </div>
-                    
-                    <div class="item-info" style="text-transform: uppercase;">
-                        <h2>{{$item->id}}</h2>
-                    </div>
-                    <div class="item-price">
-                        <p>Rp. {{$item->price}}</p>
+                    <div class="dot-list">
+
+                        @foreach($item->pictures as $picture)
+                        <div class="dot" onclick="currentSlide({{$loop->iteration}})"></div>
+                        @endforeach
+
                     </div>
                 </div>
-                @endforeach
-
+                <a id="next-btn"><img src="{{url('Assets/product-arrow-right.png')}}" alt="" style="cursor: pointer;" onclick="nextSlide(1)" ></a>
+            </div>
+            <div class="product-content">
+                <div class="product-header">
+                    <div class="product-title">
+                        <h1>Hawaian Dress</h1>
+                        <div class="product-rating">
+                        @for ( $i = 0; $i < $item->rating; $i++)
+                            <span class="fa fa-star checked"></span>
+                        @endfor
+                        @for ( $i = $item->rating; $i < 5; $i++ )
+                            <span class="fa fa-star"></span>
+                        @endfor
+                            <span class="description"> {{$item->rating}}/5</span>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <p>Rp {{$item->price}}</p>
+                    </div>
+                </div>
+                <div class="product-desc">
+                    <p>{{$item->description}}</p>
+                </div>
+                <form action="" method="POST" class="product-form" onsubmit="validate();">
+                    @csrf
+                    <div class="product-select">
+                        <select name="size" id="size">
+                            <option value="" selected disabled hidden>Select Size</option>
+                            <option value="small">Small (S)</option>
+                            <option value="medium">Medium (M)</option>
+                            <option value="large">Large (L)</option>
+                        </select>
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit" style="cursor: pointer;">
+                            <p>ADD TO CART</p> 
+                            <img src="{{url('Assets/arrow-right.png')}}" alt="">
+                        </button>
+                    </div> 
+                </form>
             </div>
         </div>
     </section>

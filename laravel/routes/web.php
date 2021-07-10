@@ -23,6 +23,7 @@ Route::get('/category', function () {
 });
 
 Route::get('/category/{id}', [CategoryController::class, 'index']);
+Route::get('/item/{id}', [ItemsController::class, 'index']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
