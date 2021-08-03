@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/viewProduct.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/navbar.js"></script>
     <script src="js/viewProduct.js"></script>
     <title>Fave</title>
 </head>
@@ -26,10 +25,14 @@
             </ul>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a id="search-bar">
-                        <img src="Assets/category-search.png" alt="">
-                        <span><input type="text" name="search" id="search"></span>
-                    </a>
+                    <div id="search-wrapper">
+                        <a id="search-bar">
+                            <img src="Assets/category-search.png" alt="">
+                            <span><input type="text" name="search" id="search"></span>
+                        </a>
+                        <div id="search-box">
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="#" style="display: flex; align-items: center;">
@@ -143,5 +146,6 @@
             </div>
         </div>
     </section>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

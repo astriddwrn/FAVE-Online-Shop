@@ -120,6 +120,29 @@ a{
     width: 10vw;
 }
 
+#search-box{
+    position: absolute;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#search-box>a{
+    background-color: white;
+    color: var(--darkblue);
+    font-size: 1.2rem;
+    padding: 0.8rem 0.5rem;
+}
+
+#search-box>a:hover{
+    background-color: var(--lightblue);
+    color: var(--white);
+}
+
+#search-box .active{
+    display: block;
+}
+
 #login-btn{
     padding: 0.6rem 2.4vw;
     border-radius: 8px;
@@ -735,7 +758,7 @@ a{
         right: 0;
     }
 
-    .category .nav-item a, #search-bar, #login-btn{
+    .category .nav-item a, #search-wrapper, #login-btn{
         display: none;
         margin: 0;
     }
