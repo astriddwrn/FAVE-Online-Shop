@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
+                    <a href="/cart">
                         <img src="{{url('Assets/home-shopping-cart.png')}}" alt="">
                     </a>
                 </li>
@@ -126,14 +126,15 @@
                 <div class="product-desc">
                     <p>{{$item->description}}</p>
                 </div>
-                <form action="" method="POST" class="product-form" onsubmit="validate();">
+                <form action="/add-to-cart" method="POST" class="product-form" onsubmit="validate();">
                     @csrf
+                    <input type="hidden" name="item_id" value="{{$item->id}}">
                     <div class="product-select">
                         <select name="size" id="size">
                             <option value="" selected disabled hidden>Select Size</option>
-                            <option value="small">Small (S)</option>
-                            <option value="medium">Medium (M)</option>
-                            <option value="large">Large (L)</option>
+                            <option value="Small (S)">Small (S)</option>
+                            <option value="Medium (M)">Medium (M)</option>
+                            <option value="Large (L)">Large (L)</option>
                         </select>
                     </div>
                     <div class="submit-btn">
@@ -170,3 +171,4 @@
     </section>
 </body>
 </html>
+

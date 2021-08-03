@@ -20,4 +20,8 @@ class Item extends Model
     public function Pictures(){
         return $this->hasMany(Picture::class, 'item_id');
     }
+
+    public function Carts(){
+        return $this->hasMany(Cart::class, 'item_id'); //foreign key of this in other's table & primary of this
+    }
 }

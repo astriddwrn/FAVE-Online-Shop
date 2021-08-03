@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/category', function () {
 
 Route::get('/category/{id}', [CategoryController::class, 'index']);
 Route::get('/item/{id}', [ItemsController::class, 'index']);
+Route::get('/cart', [CartController::class, 'index']);
+Route::post('/add-to-cart', [CartController::class, 'store']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
