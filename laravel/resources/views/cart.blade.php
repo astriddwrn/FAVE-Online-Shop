@@ -70,7 +70,7 @@
                     <div class="title">{{$cart->item_id}}</div>
                     <div class="price">Rp {{$cart->item->price}}</div>
                     <div class="size my-2">Size: {{$cart->size}}</div>
-                    <input type="hidden" id="price" value="{{$cart->item->price}}">
+                    <input type="hidden" class="price-input" id="price" value="{{$cart->item->price}}">
                     <div class="d-flex flex-direction-row">
                         <div class="qty">Quantity: </div>
                         <select name="qty" id="qty" class="qty-input">
@@ -110,8 +110,8 @@
                         </div>
                         <div>
                             <div class="subtotal mt-2">Rp <span class="input-sum"></span></div>
-                            <div class="subtotal  mt-2">Rp <span class="input-tax"></span></div>
-                            <div class="subtotal  mt-2"><b>Rp <span class="input-total"></span></b></div>
+                            <div class="subtotal mt-2">Rp <span class="input-tax"></span></div>
+                            <div class="subtotal mt-2"><b>Rp <span class="input-total"></span></b></div>
                         </div>
                         
                     </div>
@@ -142,15 +142,22 @@
             $tax = Math.floor($sum/10/100);
             $total = $sum+$tax;
 
-            $('#qty').change(function(){
-                $price = $('#price').val();
-                $qty = $('#qty').val();
-                $sum = 0;
-
+            $('.qty-input').change(function(){
+                let $sum = 0;
+                let $tax = 0;
+                let $total = 0;
+                $('.qty-input').each(function(){
+                    $price = $(this).parent().parent().find('.price-input').val();
+                    $qty = $(this).val();
+                    $sum += Math.floor($price*$qty);
+                    console.log($qty);
+                });
+                $tax = Math.floor($sum/10/100);
+                $total += $sum+$tax;
+                $('.input-sum').text($sum);
+                $('.input-tax').text($tax);
+                $('.input-total').text($total);
             });
-
-            
-
             $('.input-sum').text($sum);
             $('.input-tax').text($tax);
             $('.input-total').text($total);

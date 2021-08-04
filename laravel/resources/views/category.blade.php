@@ -90,8 +90,9 @@
                 <p>You have no limits in your clothing.<br>Let you face the world in style.</p>
             </div>
             <div class="all-gallery">
-            @foreach($category->items as $item)
-                <div class="item">
+                @if($category)
+                    @foreach($category->items as $item)
+                    <div class="item">
                     <div class="item-image">
                     @foreach($item->pictures as $picture)
                         @if($loop->first)
@@ -113,7 +114,32 @@
                     </div>
                 </div>
                 @endforeach
+                
+                @elseif($items)
+                    @foreach($items as $item)
+                    <div class="item">
+                    <div class="item-image">
+                    @foreach($item->pictures as $picture)
+                        @if($loop->first)
+                        <img src="{{asset('Assets/' . $picture->location)}}" alt="">
+                        @endif
+                    @endforeach
 
+                        <div class="overlay">
+                            <a href="/item/{{$item->id}}">View</a>
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="item-info" style="text-transform: uppercase;">
+                        <h2>{{$item->id}}</h2>
+                    </div>
+                    <div class="item-price">
+                        <p>Rp. {{$item->price}}</p>
+                    </div>
+                </div>
+                @endforeach
+                @endif
             </div>
         </div>
     </section>

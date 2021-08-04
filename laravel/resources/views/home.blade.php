@@ -23,7 +23,7 @@
                 </a>
             </div>
             <ul class="nav-list category">
-                {{--<li class="nav-item"><a href="#">All</a></li>--}}
+                <li class="nav-item"><a href="/all">All</a></li>
                 <li class="nav-item"><a href="/category/women">Women</a></li>
                 <li class="nav-item"><a href="/category/men">Men</a></li>
             </ul>
@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
+                    <a href="/cart">
                         <img src="{{url('Assets/home-shopping-cart.png')}}" alt="">
                     </a>
                 </li>

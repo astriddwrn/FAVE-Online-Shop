@@ -23,6 +23,7 @@ Route::get('/category', function () {
     return view('category');
 });
 
+Route::get('/all', [ItemsController::class, 'allItem']);
 Route::get('/category/{id}', [CategoryController::class, 'index']);
 Route::get('/item/{id}', [ItemsController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);

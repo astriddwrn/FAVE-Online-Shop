@@ -20,6 +20,13 @@ class ItemsController extends Controller
         // return dd($category);
     }
 
+    public function allItem()
+    {
+        $items = Item::all();
+        return view('category', ['items' => $items, 'category' => null]);
+        // return dd($category);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
