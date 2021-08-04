@@ -11,7 +11,7 @@ class Item extends Model
 
     protected $keyType = 'string';
 
-    protected $fillable = ['id', 'category_id','rating', 'description', 'price'];
+    protected $fillable = ['id', 'category_id','rating', 'description', 'price', 'discount'];
 
     public function Category(){
         return $this->belongsTo(Category::class, 'category_id', 'id'); //foreign key of item & primary key category

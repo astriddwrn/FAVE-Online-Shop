@@ -269,6 +269,91 @@ class pictureSeeder extends Seeder
                 'location' => 'men-6-4.jpg',
             ],
 
+            // new arival
+            [
+                'id' => 49,
+                'item_id' => 'Shone Joy',
+                'location' => 'arrival-1-1.png',
+            ],
+            [
+                'id' => 50,
+                'item_id' => 'Shone Joy',
+                'location' => 'arrival-1-2.png',
+            ],
+
+            [
+                'id' => 51,
+                'item_id' => 'Sabrina Ruffle Hem Top',
+                'location' => 'arrival-2-1.png',
+            ],
+            [
+                'id' => 52,
+                'item_id' => 'Sabrina Ruffle Hem Top',
+                'location' => 'arrival-2-2.png',
+            ],
+
+            [
+                'id' => 53,
+                'item_id' => 'Victoria Front Shirt',
+                'location' => 'arrival-3-1.png',
+            ],
+            [
+                'id' => 54,
+                'item_id' => 'Victoria Front Shirt',
+                'location' => 'arrival-3-2.png',
+            ],
+
+            [
+                'id' => 55,
+                'item_id' => 'Reena Mini Dress',
+                'location' => 'arrival-4-1.png',
+            ],
+            [
+                'id' => 56,
+                'item_id' => 'Reena Mini Dress',
+                'location' => 'arrival-4-2.png',
+            ],
+
+            [
+                'id' => 57,
+                'item_id' => 'Kori Bomber',
+                'location' => 'arrival-5-1.png',
+            ],
+            [
+                'id' => 58,
+                'item_id' => 'Kori Bomber',
+                'location' => 'arrival-5-2.png',
+            ],
+
+            // sale
+            [
+                'id' => 59,
+                'item_id' => 'Hawaian Midi Dress',
+                'location' => 'sale-1-1.png',
+            ],
+            [
+                'id' => 60,
+                'item_id' => 'Kori Bomber',
+                'location' => 'sale-1-2.png',
+            ],
+            [
+                'id' => 61,
+                'item_id' => 'Dani Active Crop',
+                'location' => 'sale-2-1.png',
+            ],
+            [
+                'id' => 62,
+                'item_id' => 'Maternity Drawstring Dress',
+                'location' => 'sale-3-1.png',
+            ],
+            [
+                'id' => 63,
+                'item_id' => 'Maternity Drawstring Dress',
+                'location' => 'sale-3-2.png',
+            ],
+            
+
+
         ];
 
         foreach($pictures as $picture){

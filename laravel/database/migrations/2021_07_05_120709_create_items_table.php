@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('rating');
             $table->longText('description');
             $table->bigInteger('price');
+            $table->integer('discount');
             $table->timestamps();
         });
     }

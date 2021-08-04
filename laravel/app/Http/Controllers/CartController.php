@@ -28,7 +28,7 @@ class CartController extends Controller
 
         
         $carts = Cart::where('user_id','=' ,$user_id)->get();
-        return view('cart')->with(compact('carts'))->with('items', $items);
+        return view('cart')->with(compact('carts'))->with('items', $items)->with('user_id', $user_id);
 
         
 
@@ -104,8 +104,14 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+        Cart::destroy($id);
+        return back();
+    }
+
+    public function destroyAll($id){
+        Cart::where('user_id',$id)->delete();
+        return back();
     }
 }

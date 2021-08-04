@@ -22,17 +22,17 @@
                 </a>
             </div>
             <ul class="nav-list category">
-                <!-- <li class="nav-item"><a href="#">All</a></li> -->
+                <li class="nav-item"><a href="/all">All</a></li>
                 <li class="nav-item"><a href="/category/women">Women</a></li>
                 <li class="nav-item"><a href="/category/men">Men</a></li>
             </ul>
             <ul class="nav-list">
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="#" id="search-bar">
                         <img src="Assets/category-search.png" alt="">
                         <span><input type="text" name="search" id="search"></span>
                     </a>
-                </li> -->
+                </li>
                 <li class="nav-item">
                     <a href="#">
                         <img src="Assets/home-shopping-cart.png" alt="">
@@ -53,10 +53,13 @@
 
             @foreach($carts as $cart)
             <div class="item bg-light mt-4 d-flex flex-direction-column align-items-center  position-relative p-3 rounded">
-                <button type="button" class="close position-absolute top-0" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-
+                <form action="{{route('cart.delete', $cart->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="close position-absolute top-0" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </form>
                 <div class="img-cont overflow-hidden">
                     @foreach($cart->item->pictures as $picture)
                         @if($loop->first)
@@ -117,7 +120,12 @@
                     </div>
 
                     <div class="d-flex flex-direction-row justify-content-center">
-                        <div class="btn checkout w-50 my-4">CHECKOUT</div>
+                        <form action="{{route('cart.deleteAll', $user_id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn checkout w-100 my-4">CHECKOUT</button>
+
+                        </form>
                     </div>
                     
                 </div>

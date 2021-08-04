@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{url('css/viewProduct.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{url('js/jquery-3.5.1.js')}}"></script>
-    <script src="{{url('js/navbar.js')}}"></script>
     <script src="{{url('js/viewProduct.js')}}"></script>
     <title>Fave</title>
 </head>
@@ -21,7 +20,7 @@
                 </a>
             </div>
             <ul class="nav-list category">
-                {{--<li class="nav-item"><a href="#">All</a></li>--}}
+                <li class="nav-item"><a href="/all">All</a></li>
                 <li class="nav-item"><a href="/category/women">Women</a></li>
                 <li class="nav-item"><a href="/category/men">Men</a></li>
             </ul>
@@ -108,7 +107,7 @@
             <div class="product-content">
                 <div class="product-header">
                     <div class="product-title">
-                        <h1>Hawaian Dress</h1>
+                        <h1>{{$item->id}}</h1>
                         <div class="product-rating">
                         @for ( $i = 0; $i < $item->rating; $i++)
                             <span class="fa fa-star checked"></span>
@@ -119,9 +118,19 @@
                             <span class="description"> {{$item->rating}}/5</span>
                         </div>
                     </div>
-                    <div class="product-price">
+                    @if( $item->discount > 0)
+                        <div class="product-price discount">
+                            <p>Rp {{$item->price}}</p>
+                            <input type="hidden" class="price-input" value="{{$item->price}}">
+                            <input type="hidden" class="discount-input" value="{{$item->discount}}">
+                            <p class="price-discount"></p>
+                        </div>
+                    @else
+                        <div class="product-price">
                         <p>Rp {{$item->price}}</p>
-                    </div>
+                        </div>
+                    @endif
+                    
                 </div>
                 <div class="product-desc">
                     <p>{{$item->description}}</p>
@@ -169,6 +178,23 @@
             </div>
         </div>
     </section>
+
+
+    <script>
+        $(document).ready(function(){
+            $('.price-discount').each(function(){
+                let $price = $(this).parent().find('.price-input').val();
+                let $discount = $(this).parent().find('.discount-input').val();
+                console.log($price);
+                let $priceDiscount = Math.floor($price - ($price*$discount/100));
+                $(this).text('Now Rp ' + $priceDiscount);
+            })
+        });
+    </script>
+    <script src="{{url('js/navbar.js')}}"></script>
+
 </body>
+
+
 </html>
 

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="{{url('css/category.css')}}">
-    <script src="{{url('js/navbar.js')}}"></script>
+    
+    <script src="{{url('js/jquery-3.5.1.js')}}"></script>
     <title>Fave</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
                 </a>
             </div>
             <ul class="nav-list category">
-                {{--<li class="nav-item"><a href="#">All</a></li>--}}
+                <li class="nav-item"><a href="/all">All</a></li>
                 <li class="nav-item"><a href="/category/women">Women</a></li>
                 <li class="nav-item"><a href="/category/men">Men</a></li>
             </ul>
@@ -64,7 +65,7 @@
                                 <img src="{{url('Assets/category-search.png')}}" alt="">
                                 <input type="text" name="search-2" id="search-2">
                             </a>
-                            {{--<a href="#">All</a>--}}
+                            <a href="/all">All</a>
                             <a href="/category/women">Women</a>
                             <a href="/category/men">Men</a>                       
                         </div>
@@ -85,10 +86,26 @@
     </nav>
     <section class="all-category"> 
         <div class="container">
-            <div class="banner">
-                <h1>ALL FASHION</h1>
-                <p>You have no limits in your clothing.<br>Let you face the world in style.</p>
-            </div>
+            
+                @if($category)
+                    @if ($category->id == 'men')
+                        <div class="banner men">
+                            <h1>MEN WEAR</h1>
+                            <p>Check out all the freshest styles your closet needs in our men's clothing range. </p>
+                        </div>
+                    @elseif ($category->id == 'women')
+                        <div class="banner women">
+                            <h1>WOMEN WEAR</h1>
+                            <p>Romantic, trendy or casual – shop our full selection of ladies’ wear here. </p>
+                        </div>
+                    @endif
+                @else 
+                    <div class="banner all">
+                        <h1>ALL FASHION</h1>
+                        <p>You have no limits in your clothing.<br>Let you face the world in style.</p>
+                    </div>
+                @endif
+            
             <div class="all-gallery">
                 @if($category)
                     @foreach($category->items as $item)
@@ -109,9 +126,19 @@
                     <div class="item-info" style="text-transform: uppercase;">
                         <h2>{{$item->id}}</h2>
                     </div>
-                    <div class="item-price">
-                        <p>Rp. {{$item->price}}</p>
-                    </div>
+                    @if( $item->discount > 0)
+                        <div class="item-price discount">
+                            <p>Rp {{$item->price}}</p>
+                            <p class="price-discount"></p>
+                            <input type="hidden" class="price-input" value="{{$item->price}}">
+                            <input type="hidden" class="discount-input" value="{{$item->discount}}">
+                            
+                        </div>
+                    @else
+                        <div class="item-price">
+                        <p>Rp {{$item->price}}</p>
+                        </div>
+                    @endif
                 </div>
                 @endforeach
                 
@@ -134,9 +161,19 @@
                     <div class="item-info" style="text-transform: uppercase;">
                         <h2>{{$item->id}}</h2>
                     </div>
-                    <div class="item-price">
-                        <p>Rp. {{$item->price}}</p>
-                    </div>
+                    @if( $item->discount > 0)
+                        <div class="item-price discount">
+                            <p>Rp {{$item->price}}</p>
+                            <p class="price-discount"></p>
+                            <input type="hidden" class="price-input" value="{{$item->price}}">
+                            <input type="hidden" class="discount-input" value="{{$item->discount}}">
+                            
+                        </div>
+                    @else
+                        <div class="item-price">
+                        <p>Rp {{$item->price}}</p>
+                        </div>
+                    @endif
                 </div>
                 @endforeach
                 @endif
@@ -165,5 +202,17 @@
             </div>
         </div>
     </section>
+
+    <script>
+        $(document).ready(function(){
+            $('.price-discount').each(function(){
+                let $price = $(this).parent().find('.price-input').val();
+                let $discount = $(this).parent().find('.price-discount').val();
+                let $priceDiscount = Math.floor($price - ($price*$discount/100));
+                $(this).text('Now Rp ' + $priceDiscount);
+            })
+        });
+    </script>
+    <script src="{{url('js/navbar.js')}}"></script>
 </body>
 </html>
