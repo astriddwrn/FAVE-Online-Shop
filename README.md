@@ -25,19 +25,11 @@
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-2. Checkout BE Branch
-   ```sh
-   git checkout be
-   ```
-3. Change Directory to laravel
-   ```sh
-   cd laravel
-   ```
-4. Install composer
+2. Install composer
    ```sh
    composer install
    ```
-5. Set up .env file
+3. Set up .env file
    ```sh
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -46,19 +38,19 @@
     DB_USERNAME=root
     DB_PASSWORD=
    ``` 
-6. Start XAMPP Apache and MySQL
-7. Create new database in Phpmyadmin named "aksubfave-teamproject"
-8. Laravel migrate
+4. Start XAMPP Apache and MySQL
+5. Create new database in Phpmyadmin named "aksubfave-teamproject"
+6. Laravel migrate
     ```sh
    php artisan migrate
    ```
-9. Laravel seeder
+7. Laravel seeder
     ```sh
     php artisan db:seed itemSeeder
     php artisan db:seed pictureSeeder
     php artisan db:seed categorySeeder
    ```
-10. Run server
+8. Run server
     ```sh
     php artisan serve
     ```
