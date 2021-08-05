@@ -14,7 +14,6 @@
 }
 
 body{
-    position: absolute;
     font-family: 'Roboto',sans-serif;
     background-color: var(--white);
     overflow-x: hidden;

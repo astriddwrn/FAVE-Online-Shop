@@ -14,11 +14,12 @@
     <title>Fave</title>
 </head>
 <body>
+
 <nav id="navbar">
         <div class="container">
             <div class="nav-logo">
                 <a href="/">
-                    <img src="{{url('Assets/logo-website.png')}}" alt="">
+                    <img src="{{ asset('Assets/logo-website.png')}}" alt="">
                 </a>
             </div>
             <ul class="nav-list category">
@@ -28,17 +29,20 @@
             </ul>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" id="search-bar">
-                        <img src="{{url('Assets/category-search.png')}}" alt="">
-                        <span><input type="text" name="search" id="search"></span>
-                    </a>
+                    <div id="search-wrapper">
+                        <a id="search-bar">
+                            <img src="{{ asset('Assets/category-search.png')}}" alt="">
+                            <span><input type="text" name="search" id="search"></span>
+                        </a>
+                        <div id="search-box">
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a href="/cart">
-                        <img src="{{url('Assets/home-shopping-cart.png')}}" alt="">
+                    <a href="/cart" style="display: flex; align-items: center;">
+                        <img src="{{ asset('Assets/home-shopping-cart.png')}}" alt="">
                     </a>
                 </li>
-
                 @if (auth()->check())
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -48,7 +52,6 @@
                 @else
                 <li class="nav-item"><a href="/login" id="login-btn">LOGIN</a></li>
                 @endif
-
                 <li>
                     <a href="#">
                         <div class="hamburger-btn" id="hamburger-btn" onclick="toggleEvent(this.id), toggleEvent('side-navbar')">
@@ -59,30 +62,30 @@
                     </a>
                     <div class="side-navbar" id="side-navbar">
                         <div class="navbar-item">
-                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="Assets/navbar-x-btn.png" alt=""></a></div>
-                            <a href="#" id="search-bar-mobile">
-                                <img src="{{url('Assets/category-search.png')}}" alt="">
+                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="{{asset('Assets/navbar-x-btn.png')}}" alt=""></a></div>
+                            <a id="search-bar-mobile">
+                                <img src="{{ asset('Assets/category-search.png')}}" alt="">
                                 <input type="text" name="search-2" id="search-2">
                             </a>
-                            {{--<a href="#">All</a>--}}
+                            <a href="/all">All</a>
                             <a href="/category/women">Women</a>
                             <a href="/category/men">Men</a>                       
                         </div>
-                         @if (auth()->check())
+                        @if (auth()->check())
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
-                                id="login-btn-mobile">LOGOUT</a>
+                                <div id="login-btn-mobile"><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
+                                >LOGOUT</a></div>
                             </form>
                         @else
-                            <a href="/login" id="login-btn-mobile">LOGIN</a>
+                        <div id="login-btn-mobile"><a href="/login">LOGIN</a></div>
                         @endif
-
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
+
     <section class="view-section">
         <div class="container">
             <div class="image-wrapper">

@@ -20,7 +20,7 @@
 <nav id="navbar">
         <div class="container">
             <div class="nav-logo">
-                <a href="index.html">
+                <a href="/">
                     <img src="{{ asset('Assets/logo-website.png')}}" alt="">
                 </a>
             </div>
@@ -64,7 +64,7 @@
                     </a>
                     <div class="side-navbar" id="side-navbar">
                         <div class="navbar-item">
-                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="Assets/navbar-x-btn.png" alt=""></a></div>
+                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="{{asset('Assets/navbar-x-btn.png')}}" alt=""></a></div>
                             <a id="search-bar-mobile">
                                 <img src="{{ asset('Assets/category-search.png')}}" alt="">
                                 <input type="text" name="search-2" id="search-2">
@@ -76,11 +76,11 @@
                         @if (auth()->check())
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <div><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
-                                id="login-btn-mobile">LOGOUT</a></div>
+                                <div id="login-btn-mobile"><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
+                                >LOGOUT</a></div>
                             </form>
                         @else
-                        <div id="login-btn-mobile"><a href="">LOGIN</a></div>
+                        <div id="login-btn-mobile"><a href="/login">LOGIN</a></div>
                         @endif
                     </div>
                 </li>
