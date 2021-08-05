@@ -205,7 +205,7 @@
                     let $disc = $(this).parent().parent().find('.disc-input').val();
                     let $qty = $(this).val();
                     let $priceDiscount = Math.floor($price - ($price*$disc/100));
-                    $(this).parent().parent().find('.price').text('Now ' + $priceDiscount);
+                    $(this).parent().parent().find('.price').text('Rp ' + $priceDiscount);
                     $sum += Math.floor($priceDiscount*$qty);
                     console.log($qty);
                 });
