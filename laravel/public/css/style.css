@@ -14,6 +14,7 @@
 }
 
 body{
+    position: absolute;
     font-family: 'Roboto',sans-serif;
     background-color: var(--white);
     overflow-x: hidden;
@@ -183,7 +184,7 @@ a{
 }
 
 .side-navbar{
-    position: absolute;
+    position: fixed;
     top: 0; right: -300px;
     padding: 0 1.2rem;
     height: 100vh;
