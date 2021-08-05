@@ -23,18 +23,23 @@ use App\Http\Controllers\PictureApiController;
 //     return $request->user();
 // });
 
-Route::get('/user', [usersApiController::class, 'index']);
 
-Route::get('/category', [CategoryApiController::class, 'index']);
-Route::post('/category', [CategoryApiController::class, 'store']);
-Route::delete('/category/{id}', [CategoryApiController::class, 'destroy']);
 
-Route::get('/item', [ItemsApiController::class, 'index']);
-Route::post('/item', [ItemsApiController::class, 'store']);
-Route::patch('/item/{id}', [ItemsApiController::class, 'update']);
-Route::delete('/item/{id}', [ItemsApiController::class, 'destroy']);
 
-Route::get('/picture', [PictureApiController::class, 'index']);
-Route::post('/picture', [PictureApiController::class, 'store']);
-Route::patch('/picture/{id}', [PictureApiController::class, 'update']);
-Route::delete('/picture/{id}', [PictureApiController::class, 'destroy']);
+    // Route::get('/user', [usersApiController::class, 'index']);
+
+    // Route::get('/category', [CategoryApiController::class, 'index']);
+    // Route::post('/category', [CategoryApiController::class, 'store']);
+    // Route::delete('/category/{id}', [CategoryApiController::class, 'destroy']);
+    
+    // Route::get('/item', [ItemsApiController::class, 'index']);
+    // Route::post('/item', [ItemsApiController::class, 'store']);
+    // Route::patch('/item/{id}', [ItemsApiController::class, 'update']);
+    // Route::delete('/item/{id}', [ItemsApiController::class, 'destroy']);
+    
+    // Route::get('/picture', [PictureApiController::class, 'index']);
+    // Route::post('/picture', [PictureApiController::class, 'store']);
+    // Route::patch('/picture/{id}', [PictureApiController::class, 'update']);
+    // Route::delete('/picture/{id}', [PictureApiController::class, 'destroy']);
+
+ 

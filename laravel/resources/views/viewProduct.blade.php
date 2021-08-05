@@ -141,7 +141,7 @@
                 <div class="product-desc">
                     <p>{{$item->description}}</p>
                 </div>
-                <form action="/add-to-cart" method="POST" class="product-form" onsubmit="validate();">
+                <form action="/add-to-cart" method="POST" class="product-form">
                     @csrf
                     <input type="hidden" name="item_id" value="{{$item->id}}">
                     <div class="product-select">
@@ -153,10 +153,10 @@
                         </select>
                     </div>
                     <div class="submit-btn">
-                        <button type="submit" style="cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <p>ADD TO CART</p> 
                             <img src="{{url('Assets/arrow-right.png')}}" alt="">
-                        </button>
+                        </div>
                     </div> 
                 </form>
             </div>
@@ -194,7 +194,11 @@
                 console.log($price);
                 let $priceDiscount = Math.floor($price - ($price*$discount/100));
                 $(this).text('Now Rp ' + $priceDiscount);
-            })
+            });
+
+            
+
+
         });
     </script>
     <script src="{{url('js/navbar.js')}}"></script>

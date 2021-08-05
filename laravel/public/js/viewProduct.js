@@ -1,6 +1,14 @@
 $(document).ready(function(){
     $('.dot').eq(0).addClass('active');
     $('.product-img').eq(0).addClass('active');
+
+    $('.submit-btn').click(function(){
+      validate();
+      if($('#size').val()){
+          $('.product-form').submit();
+      }
+  });
+
 });
 
 var slideIndex = 1;
