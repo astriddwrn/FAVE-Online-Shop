@@ -30,7 +30,7 @@ textarea:focus, input:focus{
 }
 
 a, a:hover, a:focus, a:active, u {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 a:hover{

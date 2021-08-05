@@ -8,9 +8,9 @@
     <link rel="icon" href="{{ asset('Assets/favicon.png')}}">
 
     <meta name="items" content="{{ $items->toJson() }}">
-    <link rel="stylesheet" href="{{ asset('css/base.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/cart.css')}}">
+    <link rel="stylesheet" href="{{ url('css/style.css')}}">
+    <link rel="stylesheet" href="{{ url('css/base.css')}}">
+    <link rel="stylesheet" href="{{ url('css/cart.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
 </head>
@@ -62,7 +62,7 @@
                     </a>
                     <div class="side-navbar" id="side-navbar">
                         <div class="navbar-item">
-                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="Assets/navbar-x-btn.png" alt=""></a></div>
+                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="{{asset('Assets/navbar-x-btn.png')}}" alt=""></a></div>
                             <a id="search-bar-mobile">
                                 <img src="{{ asset('Assets/category-search.png')}}" alt="">
                                 <input type="text" name="search-2" id="search-2">
@@ -74,18 +74,18 @@
                         @if (auth()->check())
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <div><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
-                                id="login-btn-mobile">LOGOUT</a></div>
+                                <div id="login-btn-mobile"><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
+                                >LOGOUT</a></div>
                             </form>
                         @else
-                        <div id="login-btn-mobile"><a href="">LOGIN</a></div>
+                        <div id="login-btn-mobile"><a href="/login">LOGIN</a></div>
                         @endif
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    
+
     <div class="container-fluid nopadding">
         <div class="row nopadding mt-3 justify-content-center">
         <div class="col-xl-1 col-0 "></div>
@@ -239,9 +239,6 @@
             $('.input-total').text($total);
          });
     </script>
-    
-
-
-    
+    <script src="{{url('./js/navbar.js')}}"></script>
 </body>
 </html>
