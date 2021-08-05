@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/astriddwrn/aksubFave-teamProject/">
-    <img src="{{ asset('Assets/logo-website.png')}}" alt="Logo" width="80" height="80">
+    <img src="/public/Assets/logo-website.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Aksub Fave Mini Project: Fave Online Shop</h3>
@@ -74,4 +74,4 @@ This is an example of how to list things you need to use the software.
     ```
     
 ### ERD Database
-<img src="{{ asset('Assets/erd.png')}}">
+<img src="public/Assets/erd.png">
