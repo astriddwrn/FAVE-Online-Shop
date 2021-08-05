@@ -168,7 +168,7 @@
     justify-content: flex-end;
 }
 
-.submit-btn>button{
+.submit-btn>div{
     display: flex;
     align-items: center;
     border: none;
@@ -179,7 +179,7 @@
     border-radius: 10px;
 }
 
-.submit-btn>button>p{
+.submit-btn>div>p{
     letter-spacing: 2px;
     font-size: 1.5rem;
 }
@@ -202,7 +202,7 @@
         font-size: 1.6rem;
     }
 
-    .product-desc>p, .product-select>select, .submit-btn>button>p{
+    .product-desc>p, .product-select>select, .submit-btn>div>p{
         font-size: 1.3rem;
     }
     
@@ -236,7 +236,7 @@
        justify-content: center;
    }
 
-   .submit-btn>button{
+   .submit-btn>div{
         padding: 1rem 2.5rem;
     }
 }
@@ -250,7 +250,7 @@
         font-size: 1.2rem;
     }
 
-    .product-desc>p, .product-select>select, .submit-btn>button>p{
+    .product-desc>p, .product-select>select, .submit-btn>div>p{
         font-size: 1.2rem;
     }
 
@@ -268,7 +268,7 @@
         font-size: 0.9rem;
     }
 
-    .submit-btn>button{
+    .submit-btn>div{
         width: 100%;
         justify-content: center;
     }
