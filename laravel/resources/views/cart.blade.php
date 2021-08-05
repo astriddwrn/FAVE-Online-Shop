@@ -15,11 +15,11 @@
     
 </head>
 <body>
-    <nav id="navbar">
+<nav id="navbar">
         <div class="container">
             <div class="nav-logo">
-                <a href="index.html">
-                    <img src="Assets/logo-website.png" alt="">
+                <a href="/">
+                    <img src="{{ asset('Assets/logo-website.png')}}" alt="">
                 </a>
             </div>
             <ul class="nav-list category">
@@ -29,21 +29,63 @@
             </ul>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" id="search-bar">
-                        <img src="Assets/category-search.png" alt="">
-                        <span><input type="text" name="search" id="search"></span>
-                    </a>
+                    <div id="search-wrapper">
+                        <a id="search-bar">
+                            <img src="{{ asset('Assets/category-search.png')}}" alt="">
+                            <span><input type="text" name="search" id="search"></span>
+                        </a>
+                        <div id="search-box">
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
-                        <img src="Assets/home-shopping-cart.png" alt="">
+                    <a href="/cart" style="display: flex; align-items: center;">
+                        <img src="{{ asset('Assets/home-shopping-cart.png')}}" alt="">
                     </a>
                 </li>
-                <li class="nav-item"><a href="login.html" id="login-btn">LOGIN</a></li>
+                @if (auth()->check())
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
+                        id="login-btn">LOGOUT</a></li>
+                    </form>
+                @else
+                <li class="nav-item"><a href="/login" id="login-btn">LOGIN</a></li>
+                @endif
+                <li>
+                    <a href="#">
+                        <div class="hamburger-btn" id="hamburger-btn" onclick="toggleEvent(this.id), toggleEvent('side-navbar')">
+                            <div class="line-1"></div>
+                            <div class="line-2"></div>
+                            <div class="line-3"></div>
+                        </div>
+                    </a>
+                    <div class="side-navbar" id="side-navbar">
+                        <div class="navbar-item">
+                            <div id="close-btn" style="width: 100%;"><a href="#" onclick="toggleEvent('hamburger-btn'),toggleEvent('side-navbar')"><img src="Assets/navbar-x-btn.png" alt=""></a></div>
+                            <a id="search-bar-mobile">
+                                <img src="{{ asset('Assets/category-search.png')}}" alt="">
+                                <input type="text" name="search-2" id="search-2">
+                            </a>
+                            <a href="/all">All</a>
+                            <a href="/category/women">Women</a>
+                            <a href="/category/men">Men</a>                       
+                        </div>
+                        @if (auth()->check())
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <div><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" 
+                                id="login-btn-mobile">LOGOUT</a></div>
+                            </form>
+                        @else
+                        <div id="login-btn-mobile"><a href="">LOGIN</a></div>
+                        @endif
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
-
+    
     <div class="container-fluid nopadding">
         <div class="row nopadding mt-3 justify-content-center">
         <div class="col-xl-1 col-0 "></div>

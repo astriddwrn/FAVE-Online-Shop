@@ -28,13 +28,17 @@
             </ul>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" id="search-bar">
-                        <img src="{{url('Assets/category-search.png')}}" alt="">
-                        <span><input type="text" name="search" id="search"></span>
-                    </a>
+                    <div id="search-wrapper">
+                        <a id="search-bar">
+                            <img src="{{ asset('Assets/category-search.png')}}" alt="">
+                            <span><input type="text" name="search" id="search"></span>
+                        </a>
+                        <div id="search-box">
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a href="/cart">
+                    <a href="/cart" style="display: flex; align-items: center;">
                         <img src="{{url('Assets/home-shopping-cart.png')}}" alt="">
                     </a>
                 </li>

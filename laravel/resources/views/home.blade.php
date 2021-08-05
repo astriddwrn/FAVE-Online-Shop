@@ -20,7 +20,7 @@
 <nav id="navbar">
         <div class="container">
             <div class="nav-logo">
-                <a href="index.html">
+                <a href="/">
                     <img src="{{ asset('Assets/logo-website.png')}}" alt="">
                 </a>
             </div>
