@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ asset('Assets/logo-website.png')}}">
+    <link rel="icon" href="{{ asset('Assets/favicon.png')}}">
 
     <link rel="stylesheet" href="{{url('./css/style.css')}}">
 
@@ -121,7 +121,7 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="/item/Reena%20Mini%20Dress">
+                            <a href="/item/Kori%20Bomber">
                                 <img src="{{ asset('Assets/arrival-5-1.png')}}" alt="">
                             </a>
                         </div>

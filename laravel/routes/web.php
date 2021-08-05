@@ -35,6 +35,9 @@ Route::delete('/cartAll/{id}', [CartController::class, 'destroyAll'])->name('car
 //     return view('dashboard');
 // });
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/category', function () {
-//     return view('category');
-// });
+Route::middleware(['auth:sanctum', 'verified'])->get('/category', function () {
+    return view('category');
+});
+Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
+    return view('cart');
+});
