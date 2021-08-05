@@ -26,18 +26,11 @@ Route::get('/category', function () {
 Route::get('/all', [ItemsController::class, 'allItem']);
 Route::get('/category/{id}', [CategoryController::class, 'index']);
 Route::get('/item/{id}', [ItemsController::class, 'index']);
-Route::get('/cart', [CartController::class, 'index']);
-Route::post('/add-to-cart', [CartController::class, 'store']);
-Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
-Route::delete('/cartAll/{id}', [CartController::class, 'destroyAll'])->name('cart.deleteAll');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// });
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/add-to-cart', [CartController::class, 'store']);
+    Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+    Route::delete('/cartAll/{id}', [CartController::class, 'destroyAll'])->name('cart.deleteAll');
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/category', function () {
-//     return view('home');
-// });
-// Route::middleware(['auth:sanctum', 'verified'])->get('/cart', function () {
-//     return view('home');
-// });
+ });
