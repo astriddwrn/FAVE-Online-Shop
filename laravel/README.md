@@ -1,15 +1,9 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 <br />
 <p align="center">
   <a href="https://github.com/astriddwrn/aksubFave-teamProject/">
-    <img src="public/Assets/logo-website.png" alt="Logo" width="80" height="80">
+    <img src="public/Assets/logo-website.png" alt="Logo">
   </a>
 
   <h3 align="center">Aksub Fave Mini Project: Fave Online Shop</h3>
