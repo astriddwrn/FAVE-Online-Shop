@@ -209,7 +209,7 @@
         $(document).ready(function(){
             $('.price-discount').each(function(){
                 let $price = $(this).parent().find('.price-input').val();
-                let $discount = $(this).parent().find('.price-discount').val();
+                let $discount = $(this).parent().find('.discount-input').val();
                 let $priceDiscount = Math.floor($price - ($price*$discount/100));
                 $(this).text('Now Rp ' + $priceDiscount);
             })

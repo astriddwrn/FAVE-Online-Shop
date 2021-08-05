@@ -72,9 +72,10 @@
                 
                 <div class="p-4">
                     <div class="title">{{$cart->item_id}}</div>
-                    <div class="price">Rp {{$cart->item->price}}</div>
+                    <div class="price"></div>
                     <div class="size my-2">Size: {{$cart->size}}</div>
                     <input type="hidden" class="price-input" id="price" value="{{$cart->item->price}}">
+                    <input type="hidden" class="disc-input" id="discount" value="{{$cart->item->discount}}">
                     <div class="d-flex flex-direction-row">
                         <div class="qty">Quantity: </div>
                         <select name="qty" id="qty" class="qty-input">
@@ -140,25 +141,49 @@
     <script src="{{ asset('js/jquery-3.5.1.js')}}"></script>
     <script>
          $(document).ready(function(){
-            const json = JSON.parse($("meta[name=items]").attr("content"));
-            console.log(json);
+            // const json = JSON.parse($("meta[name=items]").attr("content"));
+            // console.log(json);
+            // let $sum = 0;
+            // let $tax = 0;
+            // let $total = 0;
+            // for (const [key, val] of Object.entries(json)) {
+            //     let $price = parseInt(val.price);
+            //     let $disc = parseInt(val.discount);
+            //     let $priceDiscount = Math.floor($price - ($price*$disc/100));
+            //     $sum += $priceDiscount;
+            // }
+            // $tax = Math.floor($sum/10/100);
+            // $total = $sum+$tax;
+
             let $sum = 0;
-            let $tax = 0;
-            let $total = 0;
-            for (const [key, val] of Object.entries(json)) {
-                $sum += parseInt(val.price);
-            }
-            $tax = Math.floor($sum/10/100);
-            $total = $sum+$tax;
+                let $tax = 0;
+                let $total = 0;
+                $('.qty-input').each(function(){
+                    let $price = $(this).parent().parent().find('.price-input').val();
+                    let $disc = $(this).parent().parent().find('.disc-input').val();
+                    let $qty = $(this).val();
+                    let $priceDiscount = Math.floor($price - ($price*$disc/100));
+                    $(this).parent().parent().find('.price').text('Now ' + $priceDiscount);
+                    $sum += Math.floor($priceDiscount*$qty);
+                    console.log($qty);
+                });
+                $tax = Math.floor($sum/10/100);
+                $total += $sum+$tax;
+                $('.input-sum').text($sum);
+                $('.input-tax').text($tax);
+                $('.input-total').text($total);
 
             $('.qty-input').change(function(){
                 let $sum = 0;
                 let $tax = 0;
                 let $total = 0;
                 $('.qty-input').each(function(){
-                    $price = $(this).parent().parent().find('.price-input').val();
-                    $qty = $(this).val();
-                    $sum += Math.floor($price*$qty);
+                    let $price = $(this).parent().parent().find('.price-input').val();
+                    let $disc = $(this).parent().parent().find('.disc-input').val();
+                    let $qty = $(this).val();
+                    let $priceDiscount = Math.floor($price - ($price*$disc/100));
+                    $(this).parent().parent().find('.price').text('Now ' + $priceDiscount);
+                    $sum += Math.floor($priceDiscount*$qty);
                     console.log($qty);
                 });
                 $tax = Math.floor($sum/10/100);
