@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/astriddwrn/aksubFave-teamProject/">
-    <img src="public/Assets/logo-website.png" alt="Logo" height="80px">
+    <img src="public/Assets/logo-website.png" alt="Logo" height="50px">
   </a>
 
   <h3 align="center">Aksub Fave Mini Project: Fave Online Shop</h3>
