@@ -6,7 +6,7 @@
     <img src="public/Assets/logo-website.png" alt="Logo" height="50px">
   </a>
 
-  <h3 align="center">Aksub Fave Mini Project: Fave Online Shop</h3>
+  <h3 align="center"> Fave Mini Project: Fave Online Shop</h3>
 
 </p>
 
